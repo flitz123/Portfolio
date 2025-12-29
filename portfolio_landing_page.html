@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peace Mumo | Python Developer • Data Analyst • Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      padding: 3rem 4rem;
+      margin-bottom: 4rem;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+    }
+
+    .header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+    }
+
+    header img {
+      height: 45px;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    header span {
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    section {
+      padding: 4rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .hero-box {
+      background: #020617;
+      border-radius: 18px;
+      padding: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .hero-box h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-box p {
+      color: #cbd5f5;
+      max-width: 700px;
+    }
+
+    .grids {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+    }
+
+    .skills ul {
+      list-style: none;
+    }
+
+    .skills li {
+      margin-bottom: 0.6rem;
+      color: #cbd5f5;
+    }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .links a i {
+      font-size: 1.3rem;
+      color: #38bdf8;
+    }
+
+    .links a:hover {
+      color: #38bdf8;
+    }
+
+    footer {
+      background: #020617;
+      padding: 3rem 4rem;
+      margin-top: 4rem;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      border: none;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    .contact-form textarea {
+      min-height: 220px; /* ~4x bigger */
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background: #38bdf8;
+      color: #020617;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .contact a {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      color: #e5e7eb;
+      text-decoration: none;
+    }
+
+    @media(max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    footer h3 {
+      margin-bottom: 1rem;
+    }
+
+    .contact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-right: 1.5rem;
+      color: #e5e7eb;
+      text-decoration: none;
+    }
+
+    .contact i {
+      color: #22c55e;
+    }
+
+    @media(max-width: 768px) {
+      header, section, footer {
+        padding: 2rem;
+      }
+    }
+      .cta {
+      margin-top: 2rem;
+      display: inline-block;
+      background: #38bdf8;
+      color: #020617;
+      padding: 0.9rem 1.6rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta:hover {
+      background: #0ea5e9;
+      transform: translateY(-2px);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: #020617;
+      width: 80%;
+      max-width: 900px;
+      height: 80%;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .modal-content iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="assets/logo.png" alt="Peace Mumo Logo" />
+    <div>
+      <h1>Peace Mumo</h1>
+      <span>Python Developer • Data Analyst • Web Developer</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-box">
+      <h2>Creative by Design. Data-Driven with Precision.</h2>
+      <p>
+        I am a multidisciplinary developer who blends clean, intuitive design with
+        data-driven engineering. I build responsive web experiences, develop Python-powered
+        solutions, and transform data into actionable insights — always focused on clarity,
+        performance, and impact.
+      </p>
+      <br></br>
+      <h3><u>EDUCATION</u></h3>
+      <p>I am a student from KCA University, pursuing a degree in Information Technology with 
+        a Diploma in Business Information Technology. Self-taught and driven to explore tech and 
+        its various fields to improve on my skills.
+      </p>
+      <a href="#contact" class="cta">Hire Me</a>
+    </div>
+
+    <div class="grids">
+      <div class="card skills">
+        <h3>Core Skills</h3>
+        <ul>
+          <li>Python Development & Automation</li>
+          <li>Data Analysis (Pandas, NumPy, Excel)</li>
+          <li>Power BI & Tableau Dashboards</li>
+          <li>Web Development (HTML, CSS, JavaScript)</li>
+          <li>WordPress & UI/UX Fundamentals</li>
+          <li>MongoDB, SQL & APIs</li>
+        </ul>
+      </div>
+
+      <div class="card links">
+        <h3>Profiles & Certificates</h3>
+        <a href="https://www.linkedin.com/in/peace-mumo-690031319/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/flitz123" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="assets/MongoDB Certificate.pdf" download><i class="fa-solid fa-file"></i> Certificate 1</a>
+        <a href="assets/Diploma Cetificate.pdf" download><i class="fa-solid fa-file"></i> Certificate 2</a>
+        <a href="assets/PEACE MUMO CV.pdf" download><i class="fa-solid fa-file-lines"></i> Download CV</a>
+        <a href="#" onclick="openCV()"><i class="fa-solid fa-eye"></i> View CV</a>
+        <a href="assets/Peace Mumo Resume.pdf" download><i class="fa-solid fa-file-lines"></i> Download Resume</a>
+        <a href="#"><i class="fa-solid fa-hourglass"></i> Certificate (In Progress)</a>
+      </div>
+    </div>
+      <div class="grids">
+      <div class="card">
+        <h3>Featured Projects</h3>
+        <p>Show visual displays of some of the projects in my GitHub.</p>
+        <br></br>
+        <div class="projects">
+          <div class="project">
+            <h4>Car_Data Analysis</h4>
+            <p>Automated data cleaning and reporting workflows using various Python libraries for Machine learning and Pandas.</p>
+            <a href="https://github.com/flitz123/Machine-learning/blob/main/car_data%20analysis.ipynb" target="_blank">View Project</a>
+          </div>
+          <div class="project">
+            <h4>PesaSharp</h4>
+            <p>Interactive fin-Edu platform built using React, Typescipt and TailwindCSS.</p>
+            <a href="assets/WebSharp showcase.mp4" target="_blank">View Project</a>
+          </div>
+          <div class="project">
+            <h4>WebSharp</h4>
+            <p>A responsive web-services portfolio with a sleek and modern design utilizing UI/UX principles.</p>
+            <a href="assets/WebSharp showcase.mp4" target="_blank">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <div id="cvModal" class="modal" onclick="closeCV()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="closeCV()">&times;</span>
+      <iframe src="assets/PEACE MUMO CV.pdf"></iframe>
+    </div>
+  </div>
+
+  <footer id="contact">
+    <div class="footer-grid">
+      <!-- Left: Contact Form -->
+      <div>
+        <h3>Contact Me</h3>
+        <p>Have a project or opportunity? Send me a message.</p>
+
+        <form class="contact-form" onsubmit="sendEmail(event)">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <textarea id="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <p id="form-status"></p>
+      </div>
+
+      <!-- Right: Get in Touch -->
+      <div>
+        <h3>Get in Touch</h3>
+        <br><a href="mailto:peacemumo107@gmail.com"><i class="fa-solid fa-envelope"></i> peacemumo107@gmail.com</a></br>
+        <br><a href="https://wa.me/254740263080" target="_blank"><i class="fab fa-whatsapp"></i> +254 740 263 080</a></br>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init('YOUR_PUBLIC_KEY'); // replace with EmailJS public key
+    })();
+
+    function sendEmail(e) {
+      e.preventDefault();
+      const status = document.getElementById('form-status');
+
+      emailjs.send('service_n6qu7c7', 'YOUR_TEMPLATE_ID', {
+        from_name: document.getElementById('name').value,
+        reply_to: document.getElementById('email').value,
+        message: document.getElementById('message').value
+      }).then(() => {
+        status.textContent = 'Message sent successfully!';
+        status.style.color = '#22c55e';
+      }, () => {
+        status.textContent = 'Failed to send message. Please try again.';
+        status.style.color = '#ef4444';
+      });
+    }
+
+    function openCV() {
+      document.getElementById('cvModal').style.display = 'flex';
+    }
+
+    function closeCV() {
+      document.getElementById('cvModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
