@@ -33,8 +33,7 @@
       background: #020617;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 1.5rem 4rem;
+      gap: 1.5rem;
       padding: 3rem 4rem;
       margin-bottom: 4rem;
       border-top-left-radius: 25px;
@@ -49,12 +48,17 @@
     }
 
     header img {
-      height: 45px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #38bdf8;
     }
 
     header h1 {
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       font-weight: 700;
+      margin-bottom: 0.2rem;
     }
 
     header span {
@@ -279,7 +283,7 @@
 <body>
 
   <header>
-    <img src="assets/logo.png" alt="Peace Mumo Logo" />
+    <img src="assets/logo.jpeg" alt="" />
     <div>
       <h1>Peace Mumo</h1>
       <span>Python Developer • Data Analyst • Web Developer</span>
@@ -308,12 +312,12 @@
       <div class="card skills">
         <h3>Core Skills</h3>
         <ul>
-          <li>Python Development & Automation</li>
-          <li>Data Analysis (Pandas, NumPy, Excel)</li>
-          <li>Power BI & Tableau Dashboards</li>
-          <li>Web Development (HTML, CSS, JavaScript)</li>
+          <li>Python Development & Automation, GoLang</li>
+          <li>Data Analysis (Pandas, NumPy, Excel, Matplotlib)</li>
+          <li>Data Visualization (Power BI & Tableau Dashboards, Seaborn)</li>
+          <li>Web Development (HTML, CSS, JavaScript, React, TypeScript)</li>
           <li>WordPress & UI/UX Fundamentals</li>
-          <li>MongoDB, SQL & APIs</li>
+          <li>MongoDB, SQL & APIs, PostgresSQL, JSON</li>
         </ul>
       </div>
 
@@ -323,6 +327,7 @@
         <a href="https://github.com/flitz123" target="_blank"><i class="fab fa-github"></i> GitHub</a>
         <a href="assets/MongoDB Certificate.pdf" download><i class="fa-solid fa-file"></i> Certificate 1</a>
         <a href="assets/Diploma Cetificate.pdf" download><i class="fa-solid fa-file"></i> Certificate 2</a>
+        <a href="assets/Micro1 Certificate.jpg" download><i class="fa-solid fa-file"></i> Certificate 3</a>
         <a href="assets/PEACE MUMO CV.pdf" download><i class="fa-solid fa-file-lines"></i> Download CV</a>
         <a href="#" onclick="openCV()"><i class="fa-solid fa-eye"></i> View CV</a>
         <a href="assets/Peace Mumo Resume.pdf" download><i class="fa-solid fa-file-lines"></i> Download Resume</a>
@@ -390,14 +395,14 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function() {
-      emailjs.init('YOUR_PUBLIC_KEY'); // replace with EmailJS public key
+      emailjs.init('TRRn0qVZcuWCkBrge'); // replace with EmailJS public key
     })();
 
     function sendEmail(e) {
       e.preventDefault();
       const status = document.getElementById('form-status');
 
-      emailjs.send('service_n6qu7c7', 'YOUR_TEMPLATE_ID', {
+      emailjs.send('service_n6qu7c7', 'template_n0ko9ib', {
         from_name: document.getElementById('name').value,
         reply_to: document.getElementById('email').value,
         message: document.getElementById('message').value
